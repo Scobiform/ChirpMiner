@@ -7,6 +7,7 @@
     */
 
     // PHP Composer
+    // You need to compose the TwitterOAuth
     require 'vendor/autoload.php';
     use Abraham\TwitterOAuth\TwitterOAuth;
 
