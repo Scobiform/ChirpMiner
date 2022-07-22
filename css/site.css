@@ -145,11 +145,9 @@ p{
     overflow-x: hidden;
     overflow-y: scroll;
     height: 100vh;
-    /* display: contents; */
     display: grid;
-    /* margin-left: 31vw; */
     width: inherit;
-    width: 97.9vw;
+    width: 100vw;
 }
 
 .twitterLists::-webkit-scrollbar {
