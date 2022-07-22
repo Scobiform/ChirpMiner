@@ -40,7 +40,7 @@
                 }
                 else
                 {
-                    $listId = "UkraineInfoBot";
+                    $listId = $ownAccount;
                 }
 
                 if(isset($_POST['name'])) 
@@ -50,7 +50,7 @@
                 }
                 else
                 {
-                    $currentAccount = "UkraineInfoBot";;
+                    $currentAccount = $ownAccount;;
                 }
 
                 echo "<h1>ШирпМайнинг</h1>";
@@ -99,15 +99,15 @@
         <div class="twitterListSelect">
             <form method="post">
                 <select name="Id" onchange="this.form.submit()">
-                    <option value="ChirpMining/lists/1538560246209191944">SELECT TWITTERLIST</option>
-                    <option value="ChirpMining/lists/1538560246209191944">🌐 Media (english)</option>
-                    <option value="ChirpMining/lists/1537760505896501248">🌐 Authors (english)</option>
-                    <option value="ChirpMining/lists/1543518362877235201">🦆 Information Technology</option>
-                    <option value="UkraineInfoBot/lists/1410205580212555782" >🇩🇪 Authors</option>
-                    <option value="UkraineInfoBot/lists/1413035725143093249">🇩🇪 Activists</option>
-                    <option value="UkraineInfoBot/lists/1456380304277614596">🇩🇪 Parliament (MdB20)</option>
-                    <option value="UkraineInfoBot/lists/1423990031920861184">⚔ NATO</option>
-                    <option value="UkraineInfoBot/lists/1423230800879816705">🇺🇳 United Nations</option>
+                    <option value="<?php echo $listProvider ?>/lists/1538560246209191944">SELECT TWITTERLIST</option>
+                    <option value="<?php echo $listProvider ?>/lists/1538560246209191944">🌐 Media (english)</option>
+                    <option value="<?php echo $listProvider ?>/lists/1537760505896501248">🌐 Authors (english)</option>
+                    <option value="<?php echo $listProvider ?>/lists/1543518362877235201">🦆 Information Technology</option>
+                    <option value="<?php echo $ownAccount ?>/lists/1410205580212555782" >🇩🇪 Authors</option>
+                    <option value="<?php echo $ownAccount ?>/lists/1413035725143093249">🇩🇪 Activists</option>
+                    <option value="<?php echo $ownAccount ?>/lists/1456380304277614596">🇩🇪 Parliament (MdB20)</option>
+                    <option value="<?php echo $ownAccount ?>/lists/1423990031920861184">⚔ NATO</option>
+                    <option value="<?php echo $ownAccount ?>/lists/1423230800879816705">🇺🇳 United Nations</option>
                     <option value="UnitedSpaceCats">United Space Cats 😻</option>            
                     <!--<option value="" > </option> -->
                 </select>

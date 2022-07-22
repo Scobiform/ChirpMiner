@@ -1,7 +1,5 @@
 # ChirpMining
-Web application written in PHP to manage Twitter with helper tools.
-
-
+Web application written in PHP to manage Twitter API V2.
 
 # Installation
 You will need a config.php in your wwwroot with the following code: 
@@ -13,7 +11,13 @@ You will need a config.php in your wwwroot with the following code:
     $access_token_secret = "";
     $consumer_key = "";
     $consumer_secret = "";
+
+    // Your details
+    $ownAccount = "yourTwitter@";
+    $listProvider = "Twitter@WithList";
 ?>
 ```
+
+
 
 
