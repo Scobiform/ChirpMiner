@@ -166,11 +166,11 @@ p{
 /*Input Form Elements*/
 form{
     display: grid;
+    width: 37vw;
 }
 
 input {
     display: grid;
-    width: 37vw;
 }
 
 input[type="text" i]
