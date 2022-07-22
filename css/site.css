@@ -1,0 +1,204 @@
+/* 
+Author: scobiform.com 
+Template: basic grid layout for PHP based website (copyright scobiform.com)
+
+2021 Color palette:
+https://coolors.co/150621-eecc22-061021-100121-ee22ee
+
+CSS HEX
+--dark-purple: #150621ff;
+--yellow-munsell: #eecc22ff;
+--rich-black-fogra-29: #061021ff;
+--dark-purple-2: #100121ff;
+--fuchsia: #ee22eeff;
+
+CSS HSL
+--dark-purple: hsla(273, 69%, 8%, 1);
+--yellow-munsell: hsla(50, 86%, 53%, 1);
+--rich-black-fogra-29: hsla(218, 69%, 8%, 1);
+--dark-purple-2: hsla(268, 94%, 7%, 1);
+--fuchsia: hsla(300, 86%, 53%, 1);
+
+SCSS HEX
+$dark-purple: #150621ff;
+$yellow-munsell: #eecc22ff;
+$rich-black-fogra-29: #061021ff;
+$dark-purple-2: #100121ff;
+$fuchsia: #ee22eeff;
+
+SCSS HSL
+$dark-purple: hsla(273, 69%, 8%, 1);
+$yellow-munsell: hsla(50, 86%, 53%, 1);
+$rich-black-fogra-29: hsla(218, 69%, 8%, 1);
+$dark-purple-2: hsla(268, 94%, 7%, 1);
+$fuchsia: hsla(300, 86%, 53%, 1);
+
+SCSS RGB
+$dark-purple: rgba(21, 6, 33, 1);
+$yellow-munsell: rgba(238, 204, 34, 1);
+$rich-black-fogra-29: rgba(6, 16, 33, 1);
+$dark-purple-2: rgba(16, 1, 33, 1);
+$fuchsia: rgba(238, 34, 238, 1);
+
+SCSS Gradient
+$gradient-top: linear-gradient(0deg, #150621ff, #eecc22ff, #061021ff, #100121ff, #ee22eeff);
+$gradient-right: linear-gradient(90deg, #150621ff, #eecc22ff, #061021ff, #100121ff, #ee22eeff);
+$gradient-bottom: linear-gradient(180deg, #150621ff, #eecc22ff, #061021ff, #100121ff, #ee22eeff);
+$gradient-left: linear-gradient(270deg, #150621ff, #eecc22ff, #061021ff, #100121ff, #ee22eeff);
+$gradient-top-right: linear-gradient(45deg, #150621ff, #eecc22ff, #061021ff, #100121ff, #ee22eeff);
+$gradient-bottom-right: linear-gradient(135deg, #150621ff, #eecc22ff, #061021ff, #100121ff, #ee22eeff);
+$gradient-top-left: linear-gradient(225deg, #150621ff, #eecc22ff, #061021ff, #100121ff, #ee22eeff);
+$gradient-bottom-left: linear-gradient(315deg, #150621ff, #eecc22ff, #061021ff, #100121ff, #ee22eeff);
+$gradient-radial: radial-gradient(#150621ff, #eecc22ff, #061021ff, #100121ff, #ee22eeff);
+*/
+
+/*CMYK Colors*/
+.colorOne {
+    background-color: #150621;
+}
+.colorTwo {
+    background-color: #eecc22;
+}
+.colorThree {
+    background-color: #061021;
+}
+.colorFour {
+    background-color: #100121;
+}
+.colorFive {
+    background-color: #ee22ee;
+}
+.bgColorOne {
+    background-color: #ee22ee;
+}
+.bgColorTwo {
+    background-color: #100121;
+}
+.bgColorThree {
+    background-color: #eecc22;
+}
+.bgColorFour {
+    background-color: #061021;
+}
+.bgColorFive {
+    background-color: #150621;
+}
+
+/* Main HTML Elements */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    margin: 0;
+    padding-top: 0;
+}
+
+body {
+    background-color: #150621;
+    color: #ffffff;
+    margin: 0;
+    padding-top: 0;
+    font-family: monospace;
+    overflow: hidden;
+}
+
+/* Headlines */
+h1{
+    font-size: 4.2vh;
+}
+
+/* Paragraphs */
+p{
+    font-size: 2.1vh;
+    padding: 0;
+    margin: 0;
+}
+
+/* Main DIV elements */
+#main {
+    background-color: #150622;
+    display: grid;
+    grid-template-columns: 63vw 37vw;
+    grid-template-rows: auto;
+    padding-top: 0;
+    width: 100vw;
+}
+
+#logo {
+    background-color: #150622;
+    grid-column: 1 / 2;;
+}
+
+/* Input Options Settings */
+.twitterListSelect {
+    grid-column: 2 / 2;
+}
+
+.getTwitterIdFromName{
+    grid-column: 2 / 2;
+}
+
+
+/* Twitterlists area */
+.twitterLists{
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 100vh;
+    /* display: contents; */
+    display: grid;
+    /* margin-left: 31vw; */
+    width: inherit;
+    width: 97.9vw;
+}
+
+.twitterLists::-webkit-scrollbar {
+    width: 2.1vw;
+}
+
+.twitterLists::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 1px #ee22ee;
+}
+
+.twitterLists::-webkit-scrollbar-thumb {
+    background-color: #100121;
+    outline: 1px solid slategrey;
+}
+
+/*Input Form Elements*/
+form{
+    display: grid;
+}
+
+input {
+    display: grid;
+    width: 37vw;
+}
+
+input[type="text" i]
+{
+    display: grid;
+    font-size: 2.8vh;
+}
+
+textarea {
+    display: grid;
+    width: 67.2vw;
+    min-height: 42vw;
+    padding: 1.4vw;
+}
+
+select {
+    font-size: 2.8vh;
+}
+
+/* List Elements */
+ul{
+    display: grid;
+    margin: 0;
+    padding: 0;
+}
+
+li{
+    font-size: 1.4vh;
+}
