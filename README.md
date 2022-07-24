@@ -1,11 +1,11 @@
-# ChirpMining
+# ChirpMiner
 Web application written in PHP to manage Twitter API V2.
 
 - Using Twitteroauth by Abraham Williams
 https://github.com/abraham/twitteroauth
 
 # Installation
-You will need a config.php in your wwwroot with the following code: 
+-You will need a config.php in your wwwroot with the following code: 
 ```
 <?php
     // Twitter configuration - you need a developer account
@@ -20,6 +20,8 @@ You will need a config.php in your wwwroot with the following code:
     $listProvider = "Twitter@WithList";
 ?>
 ```
+
+- You will need to compose "Twitteroauth" by Abraham Williams to your "vendor/" folder
 
 
 
