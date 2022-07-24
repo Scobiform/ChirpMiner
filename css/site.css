@@ -139,6 +139,9 @@ p{
     grid-column: 2 / 2;
 }
 
+.getTweetFromId{
+    grid-column: 2 / 2;
+}
 
 /* Twitterlists area */
 .twitterLists{

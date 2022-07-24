@@ -99,17 +99,21 @@
             </div>
 
             <div class="getTwitterIdFromName">
+
                 <form method="post">
                     <label for="name">Get Twitter-Data from Username:</label></label>
                     <input type="text" id="name" name="name" onchange="this.form.submit()" value="<?php echo $currentAccount;?>">
                 </form>
+
             </div>
 
             <div class="getTweetFromId">
+                <!--
                 <form method="post">
                     <label for="tweetId">Get Tweet from Url:</label></label>
                     <input type="text" id="tweetId" name="tweetId" onchange="this.form.submit()" value="<?php echo $tweetId;?>">
                 </form>
+                -->
             <div>
 
             <div class="twitterListSelect">
@@ -133,6 +137,6 @@
                     <a class="twitter-timeline" href="<?php echo $listId ?>"></a> 
             </div>
         </div>
-        <script src="~/js/site.js"></script>
+        <script src="js/site.js"></script>
     </body>
 </html>
