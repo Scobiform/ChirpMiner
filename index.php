@@ -53,6 +53,15 @@
                     $currentAccount = $ownAccount;;
                 }
 
+                if(isset($_POST['tweetId']))
+                {
+                    $listId = "i/status/".htmlspecialchars($_POST['tweetId']);
+                }
+                else
+                {
+                    $tweetId = "1549144569035608066";
+                }
+
                 echo "<h1>ШирпМайнинг</h1>";
 
                 $connection = new TwitterOAuth($consumer_key, $consumer_secret, $access_token, $access_token_secret);
@@ -96,6 +105,13 @@
             </form>
         </div>
 
+        <div class="getTweetFromId">
+            <form method="post">
+                <label for="tweetId">Get Tweet from Id:</label></label>
+                <input type="text" id="tweetId" name="tweetId" onchange="this.form.submit()" value="<?php echo $tweetId;?>">
+            </form>
+        <div>
+
         <div class="twitterListSelect">
             <form method="post">
                 <select name="Id" onchange="this.form.submit()">
@@ -114,7 +130,8 @@
             </form>
         </div>
         <div class="twitterLists">
-                <a class="twitter-timeline" href="https://twitter.com/<?php echo $listId ?>"></a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                <a class="twitter-timeline" href="https://twitter.com/<?php echo $listId ?>"></a> 
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
         </div>
     </div>
 </body>
