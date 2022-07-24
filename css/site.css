@@ -106,6 +106,8 @@ body {
 /* Headlines */
 h1{
     font-size: 4.2vh;
+    padding: 0;
+    margin: 0;
 }
 
 /* Paragraphs */
@@ -118,7 +120,6 @@ p{
 /* Main DIV elements */
 #main {
     background-color: #150622;
-    display: grid;
     grid-template-columns: 63vw 37vw;
     grid-template-rows: auto;
     padding-top: 0;
@@ -150,7 +151,6 @@ p{
     height: 100vh;
     display: grid;
     width: inherit;
-    width: 100vw;
 }
 
 .twitterLists::-webkit-scrollbar {
@@ -167,9 +167,8 @@ p{
 }
 
 /*Input Form Elements*/
-form{
+form {
     display: grid;
-    width: 37vw;
 }
 
 input {
