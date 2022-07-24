@@ -23,7 +23,7 @@
         <meta name="twitter:widgets:border-color" content="#150682">
         <link rel="manifest" href="/site.webmanifest">
         <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-        <title>ШирпМайнинг</title>
+        <title>ШирпМайнинг - Twitter API V2</title>
         <link rel="stylesheet" href="/css/site.css" />
         <base href=""/>
         <!--Get Theme-Color from the Database-->
