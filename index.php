@@ -79,22 +79,7 @@
                         echo $stauscode;
                     }
 
-                    // Dump object
-                    //var_dump($content);
-
-                    // Dump Twitter JSON Object line by line
-                    echo "<ul>";
-                    foreach($content as $key => $value) 
-                    {    
-                        foreach($value as $second => $secondValue) 
-                        {
-                            foreach($secondValue as $third => $thirdValue)
-                            {
-                                echo "<li>".$thirdValue."</li>";     
-                            }
-                        }
-                    }
-                    echo "</ul>";
+                    
                     ?>
             </div>
 
@@ -116,6 +101,24 @@
                 -->
             <div>
 
+            <?php
+                    // Dump object
+                    //var_dump($content);
+                    // Dump Twitter JSON Object line by line
+                    echo "<ul>";
+                    foreach($content as $key => $value) 
+                    {    
+                        foreach($value as $second => $secondValue) 
+                        {
+                            foreach($secondValue as $third => $thirdValue)
+                            {
+                                echo "<li>".$thirdValue."</li>";     
+                            }
+                        }
+                    }
+                    echo "</ul>";
+            ?>
+            
             <div class="twitterListSelect">
                 <form method="post">
                     <select name="Id" onchange="this.form.submit()">
