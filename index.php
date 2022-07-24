@@ -23,7 +23,7 @@
         <meta name="twitter:widgets:border-color" content="#150682">
         <link rel="manifest" href="/site.webmanifest">
         <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-        <title>ШирпМайнинг - Twitter API V2</title>
+        <title>ШирпМайнер - Twitter API V2</title>
         <link rel="stylesheet" href="/css/site.css" />
         <base href=""/>
         <!--Get Theme-Color from the Database-->
@@ -62,7 +62,7 @@
                         $tweetId = "https://twitter.com/AlmsNatalie/status/1549144569035608066";
                     }
 
-                    echo "<h1>ШирпМайнинг</h1>";
+                    echo "<h1>ШирпМайнерг</h1>";
 
                     $connection = new TwitterOAuth($consumer_key, $consumer_secret, $access_token, $access_token_secret);
                     $connection->setApiVersion('2');
