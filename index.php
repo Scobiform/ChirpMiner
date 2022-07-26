@@ -26,14 +26,13 @@
         <title>ШирпМайнер - Twitter API V2</title>
         <link rel="stylesheet" href="/css/site.css" />
         <base href=""/>
-        <!--Get Theme-Color from the Database-->
-        <meta name="theme-color" content="#150621"/>
+        <meta name="theme-color" content="#150622"/>
     </head>
     <body>
         <div id="main">
             <div id="logo">
                     <?php
-
+                    // Post actions
                     if(isset($_POST['Id']))
                     {
                         $listId = "https://twitter.com/".htmlspecialchars($_POST['Id']);
@@ -102,23 +101,23 @@
             <div>
 
             <?php
-                    // Dump object
-                    //var_dump($content);
-                    // Dump Twitter JSON Object line by line
-                    echo "<ul>";
-                    foreach($content as $key => $value) 
-                    {    
-                        foreach($value as $second => $secondValue) 
+                // Dump object
+                //var_dump($content);
+
+                // Dump Twitter JSON Object line by line
+                echo "<ul>";
+                foreach($content as $key => $value) 
+                {    
+                    foreach($value as $second => $secondValue) 
+                    {
+                        foreach($secondValue as $third => $thirdValue)
                         {
-                            foreach($secondValue as $third => $thirdValue)
-                            {
-                                echo "<li>".$thirdValue."</li>";     
-                            }
+                            echo "<li>".$thirdValue."</li>";     
                         }
                     }
-                    echo "</ul>";
-            ?>
-            
+                }
+                echo "</ul>";
+            ?>     
             <div class="twitterListSelect">
                 <form method="post">
                     <select name="Id" onchange="this.form.submit()">
