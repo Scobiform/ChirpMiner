@@ -61,7 +61,7 @@
                         $tweetId = "https://twitter.com/AlmsNatalie/status/1549144569035608066";
                     }
 
-                    echo "<h1>ШирпМайнерг</h1>";
+                    echo "<h1>ШирпМайнер</h1>";
 
                     $connection = new TwitterOAuth($consumer_key, $consumer_secret, $access_token, $access_token_secret);
                     $connection->setApiVersion('2');
