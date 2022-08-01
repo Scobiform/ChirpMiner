@@ -23,7 +23,7 @@
         <meta name="twitter:widgets:border-color" content="#150682">
         <link rel="manifest" href="/site.webmanifest">
         <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-        <title>ШирпМайнер - Twitter API V2</title>
+        <title><?php echo $siteName ?></title>
         <link rel="stylesheet" href="/css/site.css" />
         <base href=""/>
         <meta name="theme-color" content="#150622"/>
@@ -77,18 +77,14 @@
                         echo "<p>Something went wrong!</p> ";
                         echo $stauscode;
                     }
-
-                    
                     ?>
             </div>
 
             <div class="getTwitterIdFromName">
-
                 <form method="post">
                     <label for="name">Get Twitter-Data from Username:</label></label>
                     <input type="text" id="name" name="name" onchange="this.form.submit()" value="<?php echo $currentAccount;?>">
                 </form>
-
             </div>
 
             <div class="getTweetFromId">

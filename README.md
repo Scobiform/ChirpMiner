@@ -15,6 +15,9 @@ https://github.com/abraham/twitteroauth
     $consumer_key = "";
     $consumer_secret = "";
 
+    // Website name
+    $siteName = "yourname.com - site title";
+
     // Your details
     $ownAccount = "yourTwitter@";
     $listProvider = "Twitter@WithList";
