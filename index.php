@@ -59,7 +59,7 @@
                             $currentAccount = $ownAccount;;
                         }
 
-                        echo "<h1>ШирпМайнер</h1>";
+                        echo "<h1>".$siteName."</h1>";
 
                         if (!isset($_SESSION['access_token']))
                         {
