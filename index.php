@@ -90,6 +90,7 @@
 
                     <?php
 
+                        // Setting up API V2 connection
                         $connection->setApiVersion('2');
                         $content = $connection->get('users/by', ['usernames' => $currentAccount]);
 
