@@ -1,5 +1,5 @@
 <?php
-    // For debugging
+    // For debugging  
     /*
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
@@ -13,6 +13,12 @@
 
     // Load config.php
     require 'config.php';
+
+    //OAuth callback
+    define('OAUTH_CALLBACK', getenv('callback.php'));
+
+    // Start session
+    session_start();
 ?>
 <!DOCTYPE html>
 <html>
@@ -32,51 +38,77 @@
         <div id="main">
             <div id="logo">
                     <?php
-                    // Post actions
-                    if(isset($_POST['Id']))
-                    {
-                        $listId = "https://twitter.com/".htmlspecialchars($_POST['Id']);
-                    }
-                    else
-                    {
-                        $listId = "https://twitter.com/".$ownAccount;
-                    }
+                        // Post actions
+                        if(isset($_POST['Id']))
+                        {
+                            $listId = "https://twitter.com/".htmlspecialchars($_POST['Id']);
+                        }
+                        else
+                        {
+                            $listId = "https://twitter.com/".$ownAccount;
+                        }
 
-                    if(isset($_POST['name'])) 
-                    {
-                        $listId = "https://twitter.com/".htmlspecialchars($_POST['name']);
-                        $currentAccount = htmlspecialchars($_POST['name']);
-                    }
-                    else
-                    {
-                        $currentAccount = $ownAccount;;
-                    }
+                        if(isset($_POST['name'])) 
+                        {
+                            $listId = "https://twitter.com/".htmlspecialchars($_POST['name']);
+                            $currentAccount = htmlspecialchars($_POST['name']);
+                        }
+                        else
+                        {
+                            $currentAccount = $ownAccount;;
+                        }
 
-                    if(isset($_POST['tweetId']))
-                    {
-                        $listId = htmlspecialchars($_POST['tweetId']);
-                    }
-                    else
-                    {
-                        $tweetId = "https://twitter.com/AlmsNatalie/status/1549144569035608066";
-                    }
+                        if(isset($_POST['tweetId']))
+                        {
+                            $listId = htmlspecialchars($_POST['tweetId']);
+                        }
+                        else
+                        {
+                            $tweetId = "https://twitter.com/AlmsNatalie/status/1549144569035608066";
+                        }
 
-                    echo "<h1>ШирпМайнер</h1>";
+                        echo "<h1>ШирпМайнер</h1>";
 
-                    $connection = new TwitterOAuth($consumer_key, $consumer_secret, $access_token, $access_token_secret);
-                    $connection->setApiVersion('2');
-                    $content = $connection->get('users/by', ['usernames' => $currentAccount]);
+                        if (!isset($_SESSION['access_token']))
+                        {
+                            // Get Twitter connection
+                            $connection = new TwitterOAuth($consumer_key, $consumer_secret);
 
-                    if ($connection->getLastHttpCode() == 200) 
-                    {
-                        echo "<!-- Everything fine -->";
-                    } 
-                    else 
-                    {
-                        $stauscode = $connection->getLastHttpCode();
-                        echo "<p>Something went wrong!</p> ";
-                        echo $stauscode;
-                    }
+                            // Request a token
+                            $request_token = $connection->oauth('oauth/request_token', array('oauth_callback' => OAUTH_CALLBACK));
+
+                            // Session to store Tokens
+                            $_SESSION['oauth_token'] = $request_token['oauth_token'];
+                            $_SESSION['oauth_token_secret'] = $request_token['oauth_token_secret'];
+
+                            // Get url 
+                            $url = $connection->url('oauth/authorize', array('oauth_token' => $request_token['oauth_token']));
+
+                            echo '<a href="'.$url.'">Authorize Twitter</a>';
+                        }
+                        else 
+                        {
+	
+                            $access_token = $_SESSION['access_token'];
+                            $connection = new TwitterOAuth($consumer_key, $consumer_secret, $access_token['oauth_token'], $access_token['oauth_token_secret']);
+                        }
+                    ?>
+
+                    <?php
+
+                        $connection->setApiVersion('2');
+                        $content = $connection->get('users/by', ['usernames' => $currentAccount]);
+
+                        if ($connection->getLastHttpCode() == 200) 
+                        {
+                            echo "<!-- Everything fine -->";
+                        } 
+                        else 
+                        {
+                            $stauscode = $connection->getLastHttpCode();
+                            echo "<p>Something went wrong!</p> ";
+                            echo $stauscode;
+                        }
                     ?>
             </div>
 
@@ -88,6 +120,7 @@
             </div>
 
             <div class="getTweetFromId">
+                
                 <!--
                 <form method="post">
                     <label for="tweetId">Get Tweet from Url:</label></label>
