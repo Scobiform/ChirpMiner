@@ -91,6 +91,8 @@
 	
                             $access_token = $_SESSION['access_token'];
                             $connection = new TwitterOAuth($consumer_key, $consumer_secret, $access_token['oauth_token'], $access_token['oauth_token_secret']);
+
+                            $user = $connection->get('account/verify_credentials', ['tweet_mode' => 'extended', 'include_entities' => 'true']);
                         }
                     ?>
 
