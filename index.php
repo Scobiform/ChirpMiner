@@ -122,16 +122,6 @@
                 </form>
             </div>
 
-            <div class="getTweetFromId">
-                
-                <!--
-                <form method="post">
-                    <label for="tweetId">Get Tweet from Url:</label></label>
-                    <input type="text" id="tweetId" name="tweetId" onchange="this.form.submit()" value="<?php echo $tweetId;?>">
-                </form>
-                -->
-            <div>
-
             <?php
                 // Dump object
                 //var_dump($content);
@@ -149,24 +139,7 @@
                     }
                 }
                 echo "</ul>";
-            ?>     
-            <div class="twitterListSelect">
-                <form method="post">
-                    <select name="Id" onchange="this.form.submit()">
-                        <option value="<?php echo $listProvider ?>/lists/1538560246209191944">SELECT TWITTERLIST</option>
-                        <option value="<?php echo $listProvider ?>/lists/1538560246209191944">🌐 Media (english)</option>
-                        <option value="<?php echo $listProvider ?>/lists/1537760505896501248">🌐 Authors (english)</option>
-                        <option value="<?php echo $listProvider ?>/lists/1543518362877235201">🦆 Information Technology</option>
-                        <option value="<?php echo $ownAccount ?>/lists/1410205580212555782" >🇩🇪 Authors</option>
-                        <option value="<?php echo $ownAccount ?>/lists/1413035725143093249">🇩🇪 Activists</option>
-                        <option value="<?php echo $ownAccount ?>/lists/1456380304277614596">🇩🇪 Parliament (MdB20)</option>
-                        <option value="<?php echo $ownAccount ?>/lists/1423990031920861184">⚔ NATO</option>
-                        <option value="<?php echo $ownAccount ?>/lists/1423230800879816705">🇺🇳 United Nations</option>
-                        <option value="UnitedSpaceCats">United Space Cats 😻</option>            
-                        <!--<option value="" > </option> -->
-                    </select>
-                </form>
-            </div>
+            ?>
             <div class="twitterLists">
                     <a class="twitter-timeline" href="<?php echo $listId ?>"></a> 
             </div>
