@@ -59,15 +59,6 @@
                             $currentAccount = $ownAccount;;
                         }
 
-                        if(isset($_POST['tweetId']))
-                        {
-                            $listId = htmlspecialchars($_POST['tweetId']);
-                        }
-                        else
-                        {
-                            $tweetId = "https://twitter.com/AlmsNatalie/status/1549144569035608066";
-                        }
-
                         echo "<h1>ШирпМайнер</h1>";
 
                         if (!isset($_SESSION['access_token']))
