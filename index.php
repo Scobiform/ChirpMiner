@@ -19,6 +19,7 @@
 
     // Start session
     session_start();
+    
 ?>
 <!DOCTYPE html>
 <html>
