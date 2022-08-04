@@ -39,16 +39,7 @@
         <div id="main">
             <div id="logo">
                     <?php
-                        // Post actions
-                        if(isset($_POST['Id']))
-                        {
-                            $listId = "https://twitter.com/".htmlspecialchars($_POST['Id']);
-                        }
-                        else
-                        {
-                            $listId = "https://twitter.com/".$ownAccount;
-                        }
-
+                    
                         if(isset($_POST['name'])) 
                         {
                             $listId = "https://twitter.com/".htmlspecialchars($_POST['name']);
