@@ -7,19 +7,18 @@
     */
 
     // PHP Composer
-    // You need to compose the TwitterOAuth
+    // You need to compose the TwitterOAuth to your vendor folder (Secure your folder permissions)
     require 'vendor/autoload.php';
     use Abraham\TwitterOAuth\TwitterOAuth;
 
-    // Load config.php
+    // Load config.php - Create a config.php
     require 'config.php';
 
-    //OAuth callback
+    // OAuth callback
     define('OAUTH_CALLBACK', getenv('callback.php'));
 
     // Start session
-    session_start();
-    
+    session_start();    
 ?>
 <!DOCTYPE html>
 <html>
@@ -39,7 +38,7 @@
         <div id="main">
             <div id="logo">
                     <?php
-                    
+                        // POST for Twitter name (e.g. @twitter)
                         if(isset($_POST['name'])) 
                         {
                             $listId = "https://twitter.com/".htmlspecialchars($_POST['name']);
@@ -50,8 +49,11 @@
                             $currentAccount = $ownAccount;;
                         }
 
+                        // Echo sitename headline
                         echo "<h1>".$siteName."</h1>";
 
+                        // If there is no access token get TwitterOAuth url
+                        // else setup conewction with access token
                         if (!isset($_SESSION['access_token']))
                         {
                             // Get Twitter connection
@@ -81,8 +83,9 @@
 
                     <?php
 
-                        // Setting up API V2 connection
+                        // Upgrading Twitter API V2 connection
                         $connection->setApiVersion('2');
+                        // Get TwitterUser by usernames
                         $content = $connection->get('users/by', ['usernames' => $currentAccount]);
 
                         if ($connection->getLastHttpCode() == 200) 
