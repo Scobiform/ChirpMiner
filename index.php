@@ -46,6 +46,7 @@
                         }
                         else
                         {
+                            $listId = "https://twitter.com/".$ownAccount;
                             $currentAccount = $ownAccount;;
                         }
 
@@ -131,5 +132,7 @@
                     <a class="twitter-timeline" href="<?php echo $listId ?>"></a> 
             </div>
         </div>
+        <!-- Global JavaScript functions -->
+        <script src="js/site.js"></script>
     </body>
 </html>
