@@ -69,6 +69,7 @@
                             // Get url 
                             $url = $connection->url('oauth/authorize', array('oauth_token' => $request_token['oauth_token']));
 
+                            // Echo the url link
                             echo '<a href="'.$url.'">Authorize Twitter</a>';
                         }
                         else 
@@ -130,6 +131,5 @@
                     <a class="twitter-timeline" href="<?php echo $listId ?>"></a> 
             </div>
         </div>
-        <script src="js/site.js"></script>
     </body>
 </html>
