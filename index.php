@@ -128,6 +128,7 @@
                 }
                 echo "</ul>";
             ?>
+            
             <div class="twitterLists">
                     <a class="twitter-timeline" href="<?php echo $listId ?>"></a> 
             </div>
